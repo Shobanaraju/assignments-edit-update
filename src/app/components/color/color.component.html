@@ -1,0 +1,32 @@
+
+
+<div class="container">
+    <ul>
+        <div *ngFor="let colors of color">
+            <li><employeeList-child-red-color [redParent]="colors"></employeeList-child-red-color> 
+                <!-- <button class="btn btn-danger" (click)="remove(colors)" >Remove</button> -->
+                
+            </li>
+        </div>
+    </ul>
+
+</div>
+
+<div *ngFor="let colors of color">
+<employeeList-child-red-color [redParent]="colors" (delChild)="remove($event)"></employeeList-child-red-color> 
+</div>
+<br>
+<br>
+
+
+
+
+
+
+
+<div >
+
+</div>
+
+
+

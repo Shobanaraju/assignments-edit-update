@@ -1,0 +1,144 @@
+<h1>EMPLOYEES</h1>
+<table>
+    <thead>
+        <th>Employee ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Salary</th>
+        <th>DOB</th>
+        <th>Email</th>
+        <th>Action</th>    
+    </thead>
+        <tr *ngFor="let empDetail of employeeDetails "> 
+
+            <td>
+                <ng-container *ngIf="!showEdit; else nameInputTpl">
+                  {{ empDetail.employeeId}}
+                </ng-container>
+                <ng-template #nameInputTpl>
+                  <input type="text" nz-input [(ngModel)]="empDetail.employeeId" />
+                </ng-template>
+              </td>
+              <td>
+                <ng-container *ngIf="!showEdit; else firstname">
+                  {{ empDetail.firstName}}
+                </ng-container>
+                <ng-template #firstname>
+                  <input type="text" nz-input [(ngModel)]="empDetail.firstName" />
+                </ng-template>
+              </td>
+              <td>
+                <ng-container *ngIf="!showEdit; else lastName">
+                  {{ empDetail.lastName}}
+                </ng-container>
+                <ng-template #lastName>
+                  <input type="text" nz-input [(ngModel)]="empDetail.lastName" />
+                </ng-template>
+              </td>
+              <td>
+                <ng-container *ngIf="!showEdit; else salary">
+                  {{ empDetail.salary}}
+                </ng-container>
+                <ng-template #salary>
+                  <input type="text" nz-input [(ngModel)]="empDetail.salary" />
+                </ng-template>
+              </td>
+              <td>
+                <ng-container *ngIf="!showEdit; else dob">
+                  {{ empDetail.dob}}
+                </ng-container>
+                <ng-template #dob>
+                  <input type="text" nz-input [(ngModel)]="empDetail.dob" />
+                </ng-template>
+              </td>
+              <td>
+                <ng-container *ngIf="!showEdit; else emailId">
+                  {{ empDetail.emailId}}
+                </ng-container>
+                <ng-template #emailId>
+                  <input type="text" nz-input [(ngModel)]="empDetail.emailId" />
+                </ng-template>
+              </td>
+          <td>
+            <div>
+            <ng-container *ngIf="!showEdit; else update"><button  class="btn btn-primary" (click)="EditEmp(empDetail)">Edit</button></ng-container>
+           <ng-template #update>
+        <button  class="btn btn-primary" (click)="UpdateEmp()">Update</button>
+    </ng-template>
+</div></td>
+        </tr>
+
+
+
+
+
+</table>
+
+
+<!-- <input type="text" value="{{myMovie}}">
+<button (click)="change()">change Movie Name</button>
+ -->
+
+
+<!-- <br>
+<br>
+
+<div *ngIf="showEdit">
+<h1>Edit</h1>
+<table >
+    
+    <thead>
+        <th>Employee ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Salary</th>
+        <th>DOB</th>
+        <th>Email</th>
+        <th>Action</th>    
+    </thead>
+    <tr *ngFor="let empDetail of employeeDetails ">
+        <td><input matInput [(ngModel)]="empDetail.employeeId"></td>
+        <td><input matInput [(ngModel)]="empDetail.firstName"></td>
+        <td><input matInput [(ngModel)]="empDetail.lastName"></td>  
+        <td><input matInput [(ngModel)]="empDetail.salary"></td>
+        <td><input matInput [(ngModel)]="empDetail.dob"></td>
+        <td><input matInput [(ngModel)]="empDetail.emailId"></td>  
+       <td><button class="btn btn-primary" (click)="UpdateEmp()">Update</button>
+           </td>
+        </tr>
+</table>
+</div>
+
+<br>
+<br>
+
+<div *ngIf="editTable">
+<h1>Update</h1>
+<table >
+    
+    <thead>
+        <th>Employee ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Salary</th>
+        <th>DOB</th>
+        <th>Email</th>
+       
+    </thead>
+        <tr *ngFor="let empDetail of employeeDetails ">
+        <td>{{empDetail.employeeId}}</td>
+        <td>{{empDetail.firstName}}</td>
+        <td>{{empDetail.lastName}}</td>  
+        <td>{{empDetail.salary}}</td>
+        <td>{{empDetail.dob}}</td>
+        <td>{{empDetail.emailId}}</td>  
+        </tr>
+</table>
+</div> -->
+
+<!-- (click)="UpdateEmp(empDetail.employeeId,empDetail.firstName,empDetail.lastName,empDetail.salary,empDetail.dob,empDetail.emailId) -->
+
+
+
+
+
